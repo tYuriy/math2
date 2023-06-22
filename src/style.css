@@ -1,0 +1,548 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap");
+@keyframes blink {
+  0% {
+    background-color: #55AFB9;
+    color: #1F262E;
+    border: 5px solid #55AFB9;
+  }
+  100% {
+    background-color: #096312;
+    color: #E6E7E5;
+    border: 5px solid #E6E7E5;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Karantina, sans-serif;
+  font-weight: 300;
+  color: #E6E7E5;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: #1F262E;
+}
+
+.flex-hor {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.flex-vert {
+  display: flex;
+  gap: 8px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 800px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 24px;
+  perspective: 800px;
+}
+@media (max-width: 560px) {
+  .container {
+    max-width: 100vw;
+  }
+}
+.container__about {
+  font-size: 60px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  font-size: 32px;
+  perspective: 500px;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 2px;
+  background-color: #55AFB9;
+  bottom: 0;
+  right: 0;
+}
+@media (max-width: 560px) {
+  .header::before {
+    width: 78%;
+  }
+}
+.header__logo {
+  width: 64px;
+  color: #1F262E;
+  text-align: center;
+  line-height: 64px;
+  background-color: #55AFB9;
+  border-radius: 6px;
+  transform: rotateY(0deg);
+  animation: showup 1s linear 0s ease-in 1 forwards;
+}
+@keyframes showup {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.nav {
+  display: flex;
+  gap: 16px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+}
+@media (max-width: 560px) {
+  .nav {
+    gap: 4px;
+    font-size: 22px;
+  }
+}
+.nav__item {
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.nav__link {
+  padding: 8px 16px;
+}
+@media (max-width: 560px) {
+  .nav__link {
+    padding: 4px 8px;
+  }
+}
+.nav__link:hover {
+  color: #55AFB9;
+}
+.nav__link:hover::before {
+  left: 0;
+  width: 100%;
+}
+.nav__link--active {
+  background-color: #55AFB9;
+  border-radius: 4px;
+}
+.nav__link--active:hover {
+  color: #E6E7E5;
+}
+.nav__link--active:hover::before {
+  background-color: #E6E7E5;
+  left: 7.5%;
+  width: 85%;
+}
+.nav__link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  bottom: 4px;
+  background-color: #55AFB9;
+  transition: 0.3s;
+}
+
+.launcher {
+  font-size: 36px;
+  font-weight: 400;
+  padding: 8px;
+  border: 2px solid #55AFB9;
+  border-radius: 8px;
+}
+.launcher__title {
+  font-weight: 200;
+  font-family: "Karantina";
+  font-size: 100px;
+  text-align: center;
+  animation: glide 2s linear 0s 5;
+}
+@media (max-width: 560px) {
+  .launcher__title {
+    font-size: 50px;
+  }
+}
+.launcher__title > span {
+  color: #55AFB9;
+  font-weight: 500;
+}
+.launcher__button-go {
+  cursor: pointer;
+  width: 100px;
+  font-size: 84px;
+  line-height: 88px;
+  text-align: center;
+  color: #fff;
+  background-color: #55AFB9;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.3s;
+  animation: blink 2s linear infinite alternate forwards;
+}
+.launcher__button-go:hover {
+  animation: blink 0.5s linear infinite alternate forwards;
+}
+.launcher__button-go:active {
+  font-size: 72px;
+  animation-play-state: paused;
+}
+.launcher__timer {
+  width: 128px;
+  color: #fff;
+  font-size: 84px;
+  text-align: left;
+  padding-left: 14px;
+}
+@media (max-width: 560px) {
+  .launcher__timer {
+    font-size: 60px;
+  }
+}
+.launcher__button-stop {
+  cursor: pointer;
+  display: block;
+  width: 100px;
+  height: 36px;
+  margin: 0 auto;
+  font-size: 24px;
+  line-height: 24px;
+  font-family: "Schibsted Grotesk", sans-serif;
+  background-color: #B50C0C;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+.launcher__controls {
+  position: absolute;
+  right: 24px;
+  bottom: 50px;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  border: 2px solid #55AFB9;
+  border-radius: 8px;
+  padding: 8px;
+}
+@media (max-width: 560px) {
+  .task {
+    gap: 8px;
+  }
+}
+.task__example {
+  height: 160px;
+  font-size: 90px;
+  font-weight: 700;
+  font-family: "Schibsted Grotesk", sans-serif;
+  line-height: 160px;
+  color: #55AFB9;
+  text-align: center;
+}
+@media (max-width: 560px) {
+  .task__example {
+    height: 90px;
+    font-size: 35px;
+    line-height: 90px;
+  }
+}
+.task__string {
+  width: 190px;
+  text-align: center;
+  font: inherit;
+  color: inherit;
+  border-radius: 8px;
+  border: none;
+}
+@media (max-width: 560px) {
+  .task__string {
+    width: 80px;
+  }
+}
+.task__string:disabled {
+  background-color: #1F262E;
+}
+
+.answers {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  height: 150px;
+  margin-bottom: 40px;
+  font-size: 120px;
+  color: #55AFB9;
+}
+@media (max-width: 560px) {
+  .answers {
+    gap: 4px;
+    padding: 8px 0 0;
+    height: 80px;
+    margin-bottom: 0;
+    font-size: 60px;
+  }
+}
+.answers__item {
+  cursor: pointer;
+  width: 147.2px;
+  font-size: 60px;
+  line-height: 140px;
+  text-align: center;
+  font-family: "Schibsted Grotesk", sans-serif;
+  border: 2px solid #E6E7E5;
+  border-radius: 12px;
+  color: #fff;
+  transition: all 0.3s;
+}
+@media (max-width: 560px) {
+  .answers__item {
+    line-height: 70px;
+    font-size: 28px;
+  }
+}
+.answers__item:hover {
+  width: 220px;
+  color: #fff;
+  background-color: #55AFB9;
+  border-color: #55AFB9;
+}
+.answers__item:active {
+  box-shadow: none;
+  border-top: none;
+  border-left: none;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  background-color: #1F262E;
+  border: 2px solid #55AFB9;
+  border-radius: 4px;
+}
+@media (max-width: 560px) {
+  .settings {
+    gap: 6px;
+    padding: 8px;
+  }
+}
+.settings__title {
+  font-size: 100px;
+  text-align: center;
+}
+.settings__rule:nth-child(2) .rule__elements {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.settings__rule:nth-child(2) .rule__elements .radio {
+  width: 170px;
+}
+@media (max-width: 560px) {
+  .settings__rule:nth-child(2) .rule__elements .radio {
+    width: 120px;
+  }
+}
+.settings__rule:nth-child(3) .rule__elements {
+  display: flex;
+  flex-wrap: wrap;
+}
+.settings__rule:nth-child(3) .rule__elements .element {
+  width: 340px;
+  margin-right: 10px;
+}
+@media (max-width: 560px) {
+  .settings__rule:nth-child(3) .rule__elements .element {
+    width: 100%;
+  }
+}
+@keyframes body-load {
+  from {
+    transform: rotateY(90deg) translateX(100%);
+  }
+  to {
+    transform: rotateY(0deg) translateX(0%);
+  }
+}
+@keyframes windowAppears {
+  0% {
+    transform: translate(410%, -745%);
+    scale: 0.08;
+  }
+  10% {
+    transform: translate(0, 0);
+    scale: 0.08;
+  }
+  100% {
+    transform: translate(0, 0);
+    scale: 1;
+  }
+}
+.report {
+  border: 2px solid #55AFB9;
+  border-radius: 8px;
+  padding: 8px;
+}
+.report__title {
+  margin-bottom: 16px;
+  font-size: 80px;
+  text-align: center;
+}
+.report__content {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 16px;
+  width: 250px;
+}
+.report__parameter {
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #55AFB9;
+}
+.report__value {
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.rule {
+  display: flex;
+  flex-wrap: wrap;
+}
+.rule__title {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+  font-size: 40px;
+}
+.rule__title::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0px;
+  right: 0;
+  background-color: #E6E7E5;
+}
+.rule__elements {
+  width: 100%;
+  padding: 6px;
+}
+@media (max-width: 560px) {
+  .rule__elements {
+    flex-wrap: wrap;
+  }
+}
+
+.radio__label {
+  font-size: 28px;
+}
+
+.radio {
+  --radioBorderColor: white;
+  --radioCheckedColor: black;
+  --radioSize: 26px;
+  --radioRadius: 4px;
+  --duration: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  cursor: pointer;
+  font-size: 26px;
+  letter-spacing: 0.8px;
+  border-radius: 8px;
+}
+.radio__input {
+  display: none;
+}
+.radio__input:checked + .radio__checked::after {
+  transform: scale(1);
+}
+.radio__checked {
+  width: 26px;
+  height: 26px;
+  margin-right: 6px;
+  border: 1px solid #E6E7E5;
+  border-radius: var(--radioRadius);
+  box-sizing: border-box;
+  padding: 2px;
+}
+.radio__checked::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #E6E7E5;
+  border-radius: 2px;
+  transform: scale(0);
+  transition: transform var(--duration);
+}
+
+.set-value {
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  font-family: "Schibsted Grotesk", sans-serif;
+}
+.set-value__label {
+  padding: 0 6px;
+  letter-spacing: 0.8px;
+}
+@media (max-width: 560px) {
+  .set-value__label {
+    font-size: 16px;
+  }
+}
+.set-value__button {
+  cursor: pointer;
+  height: 26px;
+  width: 26px;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #E6E7E5;
+  background-color: #1F262E;
+  border: 1px solid #E6E7E5;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s;
+}
+.set-value__button:hover {
+  scale: 1.1;
+}
+.set-value__value {
+  margin: 0 4px;
+  width: 48px;
+  text-align: center;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/*# sourceMappingURL=style.css.map */

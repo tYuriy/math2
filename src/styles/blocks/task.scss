@@ -1,0 +1,61 @@
+.task {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+
+  @include onPhone {
+    gap: 8px;
+  }
+
+  border: 2px solid $color_add1;
+  border-radius: 8px;
+  
+  padding: 8px;
+  // font-family: Dosis, sans-serif;
+  // font-family: 'Schibsted Grotesk', sans-serif;
+  
+  // border-top: 10px solid $color_main;
+  // border-bottom: 10px solid $color_main;
+  
+  &__example {
+    height: 160px;
+    
+    font-size: 90px;
+    font-weight: 700;
+    font-family: 'Schibsted Grotesk', sans-serif;
+    line-height: 160px;
+    color: $color_add1;
+    // font-family: inherit;
+    text-align: center;
+
+    @include onPhone {
+      height: 90px;
+      font-size: 35px;
+      line-height: 90px;
+    }
+  }
+  &__answers {
+
+    // font-family: 'Schibsted Grotesk', sans-serif;
+  }
+  &__string {
+    width: 190px;
+    
+    text-align: center;
+    font: inherit;
+    color: inherit;
+    
+    border-radius: 8px;
+    border: none;
+
+    @include onPhone {
+      width: 80px;
+    }
+    &:disabled {
+      background-color: $color_main;
+      // color: red;
+    }
+  }
+}
+

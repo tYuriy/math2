@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Math</title>
+  <link rel="icon" type="image/png" href="./src/favicon.png">
+
+  <link rel="stylesheet" href="./src/style.css">
+  <script defer type="module" src="./src/script.js"></script>
+
+  <title>Dev</title>
+</head>
+<body>
+  <div class="container">
+    <header class="container__header header">
+      <div class="header__logo">Logo</div>
+      <ul class="header__nav nav">
+        <li class="nav__item">
+          <a 
+            href="./index.html" 
+            class="nav__link nav__link--active"
+          >Home</a>
+        </li>
+        <li class="nav__item"><a class="nav__link" href="./src/settings.html">Settings</a></li>
+        <li class="nav__item"><a class="nav__link" href="./src/about.html">About</a></li>
+      </ul>
+    </header>
+
+    <div class="container__launcher launcher">
+      <h1 class="launcher__title">Press <span>Go</span> button to start</h1>
+      <div id="launcher-controls" class="launcher__controls">
+        <button id="go-button" class="launcher__button-go" type="button">Go</button>
+        <div id="stop" class="flex-ver launcher__stop" hidden>
+          <div id="timer" class="launcher__timer">00:00</div>
+          <button id="stop-button" class="launcher__button-stop" type="button">stop</button>
+        </div>
+      </div>
+    </div>
+    <div id="task" class="container__task task">
+      <!-- <div class="task__example flex-hor">
+        <span id="value-1" class="task__string">?</span> 
+        <span id="operator" class="task__string">x</span>
+        <span id="value-2" class="task__string">?</span> 
+        = 
+        <span id="result" class="task__string">?</span>
+      </div> -->
+      <div id="task-container" class="task__example flex-hor">
+        <input id="value-1" type="number" class="task__string task__value" value="0" disabled>
+        <span id="operator" class="task__string">x</span>
+        <input id="value-2" type="number" class="task__string task__value" value="0" disabled>
+        = 
+        <!-- <span id="result" class="task__string">?</span> -->
+        <input id="result" type="number" class="task__string task__value" value="0" disabled>
+      </div>
+
+      <ul id="answers" class="task__answers answers">
+        <li hidden class="answers__item">999</li>
+        <li hidden class="answers__item">999</li>
+        <li hidden class="answers__item">999</li>
+        <li hidden class="answers__item">999</li>
+        <li hidden class="answers__item">999</li>
+      </ul>
+    </div>
+    <div hidden id="statistics" class="container__report report">
+      <h1 class="report__title">Statistics</h1>
+      <div class="report__content">
+        <div class="report__parameter">Total number of tasks</div>
+        <div id="total-tasks" class="report__value">0</div>
+      </div>
+      <div class="report__content">
+        <div class="report__parameter">Number of correct answers</div>
+        <div id="correct-tasks" class="report__value">0</div>
+      </div>
+      <!-- <div class="report__content">
+        <div class="report__parameter">Number of wrong answers</div>
+        <div class="report__value">0</div>
+      </div> -->
+      <div class="report__content">
+        <div class="report__parameter">% of correct answers</div>
+        <div id="correct-percent" class="report__value">0</div>
+      </div>
+      <div class="report__content">
+        <div class="report__parameter">Correct answers in a row</div>
+        <div id="correct-in-row" class="report__value">0</div>
+      </div>
+      <div class="report__content">
+        <div class="report__parameter">Total time spent</div>
+        <div id="total-time" class="report__value">0</div>
+      </div>
+      <div class="report__content">
+        <div class="report__parameter">Average time per task, sec</div>
+        <div id="time-per-task" class="report__value">0</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

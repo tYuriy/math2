@@ -1,0 +1,75 @@
+.nav {
+  display: flex;
+  gap: 16px;
+  height: 48px;
+
+  line-height: 48px;
+  text-align: center;
+
+  @include onPhone {
+    gap: 4px;
+    font-size: 22px;
+  }
+
+  &__item {
+    position: relative;
+    // width: 80px;
+
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  &__link {
+    padding: 8px 16px;
+    @include onPhone {
+      padding: 4px 8px;
+    }
+
+    &:hover {
+      color: $color_add1;
+      &::before {
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    &--active {
+      background-color: $color_add1;
+      border-radius: 4px;
+
+      // color: $color_add2;
+      &:hover {
+        color: $color_add2;
+
+        &::before {
+          background-color: $color_add2;
+          left: 7.5%;
+          width: 85%;
+        }
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      
+      left: 50%;
+      bottom: 4px;
+      
+      background-color: $color_add1;
+      
+      transition: 0.3s;
+    }
+
+
+    // display: block;
+    // color: red;
+  //   &--active {
+  //     // width: 100%;
+  //     background-color: $color_add1;
+  //     border-radius: 4px;
+  //   }
+  }
+}

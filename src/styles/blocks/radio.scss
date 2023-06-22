@@ -1,0 +1,116 @@
+$radioSize: 26px;
+$padding: 0px;
+// @include onPhone {
+//   $radioSize: 16px;
+  
+// }
+
+.radio {
+  // --labelColor: burlywood;
+  --radioBorderColor: white;
+  --radioCheckedColor: black;
+  --radioSize: 26px;
+  --radioRadius: 4px;
+  --duration: 0.3s;
+  
+  display: inline-flex;
+  // box-sizing: border-box;
+  align-items: center;
+  height: 32px;
+  cursor: pointer;
+  // padding: 6px;
+
+  
+  font-size: $radioSize;
+
+  letter-spacing: 0.8px;
+  // color: $color_main;
+
+  border-radius: 8px;
+  // background-color: burlywood;
+
+  &__input {
+    display: none;
+    &:checked {
+
+      & + .radio__checked {
+        &::after {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  &__checked {
+    width: $radioSize;
+    height: $radioSize;
+    margin-right: 6px;
+
+    border: 1px solid $color_add2;
+    border-radius: var(--radioRadius);
+
+    box-sizing: border-box;
+    padding: 2px;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-color: $color_add2;
+      border-radius: 2px;
+      transform: scale(0);
+      transition: transform var(--duration);
+    }
+  }
+}
+
+
+.set-value {
+  display: flex;
+  align-items: center;
+  // height: $radioSize;
+  font-size: $radioSize;
+  font-family: 'Schibsted Grotesk', sans-serif;
+
+  &__label {
+    padding: 0 6px;
+    letter-spacing: 0.8px;
+    @include onPhone {
+      font-size: 16px;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+
+    height: $radioSize;
+    width: $radioSize;
+
+    // padding-bottom: 16px;
+
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: $radioSize - $padding;
+    color: $color_add2;
+
+    background-color: $color_main;
+    border: 1px solid $color_add2;
+    border-radius: 4px;
+    outline: none;
+
+    transition: all 0.3s;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+  &__value {
+    margin: 0 4px;
+    width: 48px;
+    text-align: center;
+    font-family: inherit;
+    font-size: inherit;
+  }
+}

@@ -1,0 +1,56 @@
+.header {
+  position: relative;
+  display: flex;
+  // align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+
+  // margin-bottom: 40px;
+  font-size: 32px;
+  perspective: 500px;
+
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    background-color: $color_add1;
+    bottom: 0;
+    right: 0;
+    @include onPhone {
+      width: 78%;
+    }
+  }
+
+  &__logo {
+    width: 64px;
+    
+    color: $color_main;
+    text-align: center;
+    line-height: 64px;
+    
+    background-color: $color_add1;
+    border-radius: 6px;
+
+    transform: rotateY(0deg);
+    animation: 
+      showup 1s linear 0s ease-in 1 forwards ,
+  }
+  &__nav {
+
+    // width: 128px;
+    // display: block;
+  }
+}
+
+@keyframes showup {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}

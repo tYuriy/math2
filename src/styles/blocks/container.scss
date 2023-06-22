@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 800px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 24px;
+
+  perspective: 800px;
+
+  @include onPhone {
+    max-width: 100vw;
+  }
+  // background-color: $color_white;
+  &__header {
+  }
+  
+  &__settings {
+  }
+  
+  &__launcher {
+
+  }
+  
+  &__task {
+
+  }
+  
+  
+  &__report {
+  }
+  &__about {
+    font-size: 60px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+}

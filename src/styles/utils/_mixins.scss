@@ -1,0 +1,39 @@
+@mixin onTablet10 {
+  @media (max-width: 1148px) {
+    @content;
+  }
+}
+
+@mixin onTablet7 {
+  @media (max-width: 918px) {
+    @content;
+  }
+}
+
+@mixin onPhone {
+  @media (max-width: 560px) {
+    @content;
+  }
+}
+
+@mixin blink ($duration){
+  animation: blink $duration linear infinite alternate forwards;
+}
+
+@keyframes blink {
+  0% {
+    background-color: $color_add1;
+    color: $color_main;
+    border: 5px solid $color_add1;
+  }
+  
+  100% {
+    background-color: #096312;
+    color: $color_add2;
+    border: 5px solid $color_add2;
+  }
+  // 100% {
+  //   background-color: $color_add1;
+  //   color: $color_main;
+  // }
+}

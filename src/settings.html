@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./style.css">
+  <script defer type="module" src="./settings.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <header class="container__header header">
+      <div class="header__logo">Logo</div>
+        <ul class="header__nav nav">
+          <li class="nav__item"><a class="nav__link" href="../index.html">Home</a></li>
+          <li class="nav__item"><a class="nav__link nav__link--active" href="./settings.html">Settings</a></li>
+          <li class="nav__item"><a class="nav__link" href="./about.html">About</a></li>
+        </ul>
+    </header>
+
+    <section id="settings" class="container__settings settings">
+      <h1 class="settings__title">Settings</h1>
+      <div class="settings__rule rule">
+        <h2 class="rule__title">Operators</h2>
+        <div id="operators" class="rule__elements">
+          <label class="radio" for="addition">
+            <input checked class="radio__input" id="addition" type="checkbox" name="mode">
+            <div class="radio__checked"></div>
+            Addition
+          </label>
+          <label class="radio" for="subtraction">
+            <input checked class="radio__input" id="subtraction" type="checkbox" name="mode">
+            <div class="radio__checked"></div>
+            Subtraction
+          </label>
+          <label class="radio" for="multiplication">
+            <input checked class="radio__input" id="multiplication" type="checkbox" name="mode">
+            <div class="radio__checked"></div>
+            Multiplication
+          </label>
+          <label class="radio" for="division">
+            <input checked class="radio__input" id="division" type="checkbox" name="mode">
+            <div class="radio__checked"></div>
+            Division
+          </label>
+        </div>
+
+        <!-- </div> -->
+      </div>
+      <div class="settings__rule rule">
+        <h2 class="rule__title">Exercise mode</h2>
+        <div id="exrcise-mode" class="rule__elements">
+          <label class="element radio" for="free-time">
+            <input checked class="radio__input" id="free-time" type="radio" name="mode">
+            <div class="radio__checked"></div>
+            Free time
+          </label>
+          <label class="element radio" for="until-mistake">
+            <input class="radio__input" id="until-mistake" type="radio" name="mode">
+            <div class="radio__checked"></div>
+            Until the first mistake
+          </label>
+          <div class="element flex-hor">
+            <label class="radio" for="time-period">
+              <input class="radio__input" id="time-period" type="radio" name="mode">
+              <div class="radio__checked"></div>
+              Select time, min
+            </label>
+            <div id="time-period-control" class="set-value">
+              <button class="set-value__button">-</button>
+              <label class="set-value__value" type="text">2</label>
+              <button class="set-value__button">+</button>
+            </div>
+          </div>
+          <div class="element flex-hor">
+            
+            <label class="radio" for="task-number">
+              <input class="radio__input" id="task-number" type="radio" name="mode">
+              <div class="radio__checked"></div>
+              
+              Certain number of tasks
+            </label>
+            <div id="task-number-control" class="set-value">
+              <button class="set-value__button">-</button>
+              <label class="set-value__value" type="text">20</label>
+              <button class="set-value__button">+</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="settings__rule rule">
+        <h2 class="rule__title">Limits</h2>
+        <div id="limits" class="rule__elements">
+          <div class="flex-ver">
+            <div class="flex-hor">
+              <label class="radio" for="positive-only">
+                <input checked class="radio__input" id="positive-only" type="checkbox" name="mode">
+                <div class="radio__checked"></div>
+                Use only positive numbers
+              </label>
+            </div>
+            <div class="flex-hor">
+              <label class="radio" for="manual-entry">
+                <input checked class="radio__input" id="manual-entry" type="checkbox" name="mode">
+                <div class="radio__checked"></div>
+                Manual-entry
+              </label>
+            </div>
+            <div class="flex-hor">
+              <label class="radio" for="result-only">
+                <input checked class="radio__input" id="result-only" type="checkbox" name="mode">
+                <div class="radio__checked"></div>
+                Find result only
+              </label>
+            </div>
+            <div id="max-value-add-subtr-control" class="set-value">
+              <button class="set-value__button">-</button>
+              <label class="set-value__value" type="text">999</label>
+              <button class="set-value__button">+</button>
+              <label class="set-value__label" type="text">Set maximum for Addition / Subtraction</label>
+            </div>
+            <div id="max-value-mult-div-control" class="set-value">
+              <button class="set-value__button">-</button>
+              <label class="set-value__value" type="text">11</label>
+              <button class="set-value__button">+</button>
+              <label class="set-value__label" type="text">Set maximum for Multiplication / Division</label>
+            </div>
+          </div>
+          <div class="flex-hor">
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</body>
+</html>
